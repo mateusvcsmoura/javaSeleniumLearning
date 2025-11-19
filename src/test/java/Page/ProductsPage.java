@@ -11,8 +11,8 @@ public class ProductsPage extends SeleniumActions {
     public static final By beerCategory = By.xpath("//*[@id=\"category-Cervejas\"]/div"); // seletor da categoria de cervejas
     public static final By productPriceField = By.xpath("//*[@id=\"product-total-price\"]"); // campo do preço do produto
     public static final By addToCartBtn = By.xpath("//*[@id=\"add-product\"]");
-    public static final By cartItemFinalPrice = By.xpath("//*[@id=\"product-card-price\"]/div");
-    public static final By closeCartIcon = By.xpath("//*[@id=\"sidebar-header-close-button\"]/svg"); // ta dando problema
+    public static final By cartItemFinalPrice = By.xpath("//*[@id=\"subtotal\"]");
+    public static final By closeCartIcon = By.xpath("(//*[name()='svg'])[1]"); // ta dando problema
 
     public static By accessNewBeersProduct(String position) {
         return By.xpath("//*[@id=\"__next\"]/div/div[5]/div/div[2]/div[3]/div/div/a" + "[" + position + "]"); // seletor dinâmico para acessar produtos pela posição na lista
@@ -48,7 +48,6 @@ public class ProductsPage extends SeleniumActions {
             System.out.println("O preço do produto no carrinho está incorreto. Esperado: " + productPrice + ", Encontrado: " + cartItemPrice);
             Assert.fail(); // falhar o teste se os preços não coincidirem
         }
-
     }
 }
 
