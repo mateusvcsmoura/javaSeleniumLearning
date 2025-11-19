@@ -12,7 +12,7 @@ public class ProductsPage extends SeleniumActions {
     public static final By productPriceField = By.xpath("//*[@id=\"product-total-price\"]"); // campo do preço do produto
     public static final By addToCartBtn = By.xpath("//*[@id=\"add-product\"]");
     public static final By cartItemFinalPrice = By.xpath("//*[@id=\"subtotal\"]");
-    public static final By closeCartIcon = By.xpath("(//*[name()='svg'])[1]"); // ta dando problema
+    public static final By closeCartIcon = By.xpath("(//*[name()='svg'])[1]"); // seletor do ícone de fechar do carrinho
 
     public static By accessNewBeersProduct(String position) {
         return By.xpath("//*[@id=\"__next\"]/div/div[5]/div/div[2]/div[3]/div/div/a" + "[" + position + "]"); // seletor dinâmico para acessar produtos pela posição na lista
